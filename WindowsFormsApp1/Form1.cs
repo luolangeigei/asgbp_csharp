@@ -593,5 +593,35 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void materialButton13_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTextBox22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton19_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void materialButton19_Click_1(object sender, EventArgs e)
+        {
+            chouqian chouqian = new chouqian();
+            chouqian.Show();
+            chouqian.web.webView21.Source= new Uri($"file:///{@AppDomain.CurrentDomain.BaseDirectory}web/chouqian/index.html");
+        }
+
+        private void materialButton20_Click(object sender, EventArgs e)
+        {
+            chouqian chouqian = new chouqian();
+            chouqian.Show();
+            chouqian.web.webView21.Source = new Uri($"file:///{@AppDomain.CurrentDomain.BaseDirectory}web/jingup/index.html");
+
+        }
     }
 }

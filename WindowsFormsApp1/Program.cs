@@ -18,10 +18,31 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main(string[] args)
         {
+            try
+            {
+                if (args.Length > 0)
+                {
+                    string file = args[0];
+                    string filename = System.IO.Path.GetFileNameWithoutExtension(file);//文件名  “Default.aspx”
+                    if (!Directory.Exists(@AppDomain.CurrentDomain.BaseDirectory + "pic\\" + filename))
+                    {
+                        Directory.CreateDirectory(@AppDomain.CurrentDomain.BaseDirectory + "pic\\" + filename);
+                    }
+                    ZipFile.ExtractToDirectory(file, @AppDomain.CurrentDomain.BaseDirectory + "pic\\" + filename);
+                    MessageBox.Show("导入成功！");
+                }
+            }
+            catch
+            {
+
+
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
             // Check if the program was launched with a ".luolan" file as an argument
+           
         }
     }
 }
